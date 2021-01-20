@@ -2,5 +2,3 @@ node_modules/
 Dockerfile
 docker-compose
 dist
-.cache
-*.log
