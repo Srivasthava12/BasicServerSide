@@ -1,27 +1,33 @@
 /** @jsx h */
-import { h, Component } from 'preact';
+import { h } from "preact";
+import { useState } from "preact/hooks";
 
-class Todo  extends Component {
-    addTodo() {
-        const { todos = [] } = this.state;
-        this.setState({ todos: todos.concat(`Item ${todos.length}`) });
-    }
-    render({ page }, { todos = [] }) {
-        return (
-            <div class="app">
-                <Header name={`TODO ${page}`} />
-                <ul>
-                    {todos.map(todo => (
-                        <li key={todo}>{todo}</li>
-                    ))}
-                </ul>
-                <button onClick={() => this.addTodo()}>Add Todo</button>
-            </div>
-        );
-    }
+function Todo() {
+  const [todos, setTodos] = useState([1]);
+
+  const increment = () => {
+    const val = todos.length + 1;
+    let newList = [...todos];
+    newList.push(val);
+    console.log("newList", newList);
+    setTodos(newList);
+  };
+
+  return (
+    <div>
+      <div class="field is-grouped is-grouped-multiline">
+        {todos.length > 0 &&
+          todos.map((todo, index) => (
+            <p class="control" key={index}>
+              <a class="button">{todo}</a>
+            </p>
+          ))}
+      </div>
+      <button onClick={increment} class="button is-primary">
+        Add Todo
+      </button>
+    </div>
+  );
 }
 
-const Header = ({ name }) => (<h1>{name} List</h1>)
-
-
-export default Todo
+export default Todo;
