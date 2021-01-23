@@ -7,7 +7,7 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'public/dist/index.js',
-    format: 'iife',
+    format: 'es',
     sourcemap: true
   },
   plugins: [

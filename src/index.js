@@ -2,7 +2,7 @@
 import { h, Component, render } from 'preact';
 import { Router } from 'preact-router';
 import Todo from './pages/todo/todo'
-import Home from './pages/home/home'
+// import Home from './pages/home/home'
 
 class App extends Component {
 
@@ -10,8 +10,7 @@ class App extends Component {
         return (
             <div class="app">
                 <Router>
-                    <Home path="/" />
-                    <Todo path="/profile/" page="All" />
+                    <Todo path="/" page="All" />
                 </Router>
             </div>
         );
