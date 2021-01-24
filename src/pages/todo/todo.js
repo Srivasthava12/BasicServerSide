@@ -9,7 +9,6 @@ function Todo() {
     const val = todos.length + 1;
     let newList = [...todos];
     newList.push(val);
-    console.log("newList", newList);
     setTodos(newList);
   };
 
