@@ -33,7 +33,9 @@ export default class home extends Component {
                   <button
                     class="button is-success"
                     onClick={() => {
-                      route("/todo", true);
+                      fetch('http://localhost:3000').then((result) => {
+                        console.log("result >>>", result)
+                      })
                     }}
                   >
                     Login
